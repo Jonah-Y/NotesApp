@@ -44,6 +44,7 @@
     </string>
     <string name="default_note_text">Add Text</string>
     <string name="default_title">New Note (add title here)</string>
-    <string name="second_fragment_label">View and Edit Note:</string>
+    <string name="second_fragment_label"></string>
     <string name="list_of_notes_fragment_label">Notes:</string>
+    <string name="delete">Delete</string>
 </resources>

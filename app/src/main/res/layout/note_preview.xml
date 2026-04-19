@@ -6,7 +6,7 @@
     android:layout_height="wrap_content"
     android:id="@+id/note_preview"
     android:layout_margin="5dp"
-    app:cardBackgroundColor="#8BC34A"
+    app:cardBackgroundColor="#B3E5FC"
     app:cardCornerRadius="12dp"
     app:cardElevation="3dp"
     app:contentPadding="4dp"

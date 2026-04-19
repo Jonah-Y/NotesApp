@@ -14,6 +14,7 @@ import androidx.navigation.fragment.NavHostFragment
 import com.example.notesapp.data.Note
 import com.example.notesapp.R
 import com.example.notesapp.databinding.FragmentListOfNotesListBinding
+import com.google.android.material.snackbar.Snackbar
 import kotlin.getValue
 
 /**
@@ -66,6 +67,8 @@ class ListOfNotesFragment : Fragment() {
             noteAdapter.updateData(updatedNotes)
         }
 
+        binding.fab.setOnClickListener { newNote() }
+
     }
 
     fun onNoteClick(selectedNote: Note): Unit{
@@ -78,12 +81,16 @@ class ListOfNotesFragment : Fragment() {
         val controller: NavController = NavHostFragment.findNavController(this)
         controller.navigate(R.id.action_ListOfNotesFragment_to_SecondFragment, bundle)
     }
+
+    fun newNote(): Unit{
+        val controller: NavController = NavHostFragment.findNavController(this)
+        controller.navigate(R.id.action_ListOfNotesFragment_to_SecondFragment)
+    }
+
     companion object {
 
-        // TODO: Customize parameter argument names
         const val ARG_COLUMN_COUNT = "column-count"
 
-        // TODO: Customize parameter initialization
         @JvmStatic
         fun newInstance(columnCount: Int) =
             ListOfNotesFragment().apply {

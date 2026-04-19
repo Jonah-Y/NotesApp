@@ -16,5 +16,5 @@ interface NoteDao {
     suspend fun upsert(note: Note)
 
     @Delete
-    suspend fun delete(note: Note)
+    suspend fun delete(note: Note)  // DELETE FROM notes WHERE id = noteId
 }
