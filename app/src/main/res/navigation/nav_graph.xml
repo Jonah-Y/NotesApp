@@ -13,16 +13,16 @@
 
         <action
             android:id="@+id/action_ListOfNotesFragment_to_SecondFragment"
-            app:destination="@id/SecondFragment" />
+            app:destination="@id/SecondFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
     </fragment>
     <fragment
         android:id="@+id/SecondFragment"
         android:name="com.example.notesapp.SecondFragment"
         android:label="@string/second_fragment_label"
         tools:layout="@layout/fragment_second">
-
-        <action
-            android:id="@+id/action_SecondFragment_to_ListOfNotesFragment"
-            app:destination="@id/ListOfNotesFragment" />
     </fragment>
 </navigation>
