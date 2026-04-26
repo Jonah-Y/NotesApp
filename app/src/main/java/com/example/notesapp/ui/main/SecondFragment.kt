@@ -52,6 +52,20 @@ class SecondFragment : Fragment() {
         binding.title.setText(startingTitle)
         binding.note.setText(startingContent)
 
+        // select all in text boxes when new note so the user can start typing
+        if (startingTitle == DEFAULT_TITLE && startingContent == DEFAULT_NOTE) {
+            binding.title.setSelectAllOnFocus(true)
+            binding.title.setOnFocusChangeListener { _, hasFocus ->
+                if (binding.title.text.toString() != DEFAULT_TITLE) binding.title.setSelectAllOnFocus(false)
+            }
+
+            binding.note.setSelectAllOnFocus(true)
+            binding.note.setOnFocusChangeListener { _, hasFocus ->
+                if (binding.note.text.toString() != DEFAULT_NOTE) binding.note.setSelectAllOnFocus(false)
+            }
+        }
+
+
         // set the click handler for the overflow menu (deletion)
         val menuHost: MenuHost = requireActivity()
         menuHost.addMenuProvider(object : MenuProvider {
